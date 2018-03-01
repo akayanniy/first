@@ -1,16 +1,16 @@
+import sqlite3
+
 from dbconvert import Parser
+from ram2sqlite import ram2sqlite
+
 app = Parser()
 app.execute("tasks.xml")
 
-with open("result.xml", "w") as output_file:
+with open("./result/result.xml", "w+", encoding="utf-8") as output_file:
     app.createXML().writexml(output_file, addindent="  ", newl="\n", encoding="utf-8")
     output_file.close()
 
-
-#==============================================================================
-#     Test
-#==============================================================================
-with open("result.xml", "r") as result, open("tasks.xml", "r", encoding="utf-8") as origin:
+with open("./result/result.xml", "r", encoding="utf-8") as result, open("tasks.xml", "r", encoding="utf-8") as origin:
     i = 0
     errors = []
     for r, o in zip(result, origin):
@@ -21,5 +21,8 @@ with open("result.xml", "r") as result, open("tasks.xml", "r", encoding="utf-8")
     origin.close()
     print(errors)
 
-# Ошибка в первой строке из-за того,
-# что оригинальный файл начинается с \ufeff
+connection = sqlite3.connect("./result/tasks.db")
+ram2sqlite(app.schema, connection)
+connection.commit()
+connection.close()
+print(app.schema.tables[0].name)

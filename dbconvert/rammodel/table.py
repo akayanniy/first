@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-class Table(Entity):
+class Table:
 
     def __init__(self):
         self.name = None
@@ -10,3 +10,6 @@ class Table(Entity):
         self.fields = []
         self.constraints = []
         self.indexes = []
+        self.add = None
+        self.edit = None
+        self.delete = None

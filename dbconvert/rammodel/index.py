@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
-class Index(Entity):
+class Index:
 
     def __init__(self):
         self.name = None
         self.props = None
         self.fields = []
+        self.is_clustered = False
