@@ -5,3 +5,4 @@ class Index:
         self.name = None
         self.props = None
         self.fields = []
+        self.is_clustered = False

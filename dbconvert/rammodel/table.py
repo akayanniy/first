@@ -10,3 +10,6 @@ class Table:
         self.fields = []
         self.constraints = []
         self.indexes = []
+        self.add = None
+        self.edit = None
+        self.delete = None
