@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-class Index(Entity):
+class Index:
 
     def __init__(self):
         self.name = None

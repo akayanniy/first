@@ -2,7 +2,7 @@ from dbconvert import Parser
 app = Parser()
 app.execute("tasks.xml")
 
-with open("result.xml", "w") as output_file:
+with open("./result/result.xml", "w+", encoding="utf-8") as output_file:
     app.createXML().writexml(output_file, addindent="  ", newl="\n", encoding="utf-8")
     output_file.close()
 
@@ -10,7 +10,7 @@ with open("result.xml", "w") as output_file:
 #==============================================================================
 #     Test
 #==============================================================================
-with open("result.xml", "r") as result, open("tasks.xml", "r", encoding="utf-8") as origin:
+with open("./result/result.xml", "r", encoding="utf-8") as result, open("tasks.xml", "r", encoding="utf-8") as origin:
     i = 0
     errors = []
     for r, o in zip(result, origin):

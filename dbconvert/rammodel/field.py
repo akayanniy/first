@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-class Field(Entity):
+class Field:
 
     def __init__(self):
         self.name = None

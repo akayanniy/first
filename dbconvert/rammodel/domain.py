@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-class Domain(Entity):
+class Domain:
     def __init__(self):
         self.name = None
         self.descr = None

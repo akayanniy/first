@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-class Table(Entity):
+class Table:
 
     def __init__(self):
         self.name = None

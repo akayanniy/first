@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-class Schema(Entity):
+class Schema:
 
     def __init__(self):
         self.fulltext_engine = None

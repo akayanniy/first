@@ -1,4 +1,5 @@
 import xml.dom.minidom as md
+from .utils import minidom_fixed as md_fix
 try:
     from .rammodel import Domain, Table, Field, Index, Constraint, Schema
 except ModuleNotFoundError:
@@ -242,7 +243,7 @@ class Parser():
         if self.schema is None:
             raise ValueError("Schema is missing")
 
-        xml = md.Document()
+        xml = md_fix.Document()
 
         node = xml.createElement("dbd_schema")
         if self.schema.fulltext_engine is not None:
